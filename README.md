@@ -1,7 +1,7 @@
 # Коректор
 ![Ћирилица](https://raw.githubusercontent.com/msmiljan/korektor/master/src/Korektor/SpellCheck_Cir.png "Ћирилица")![Latinica](https://raw.githubusercontent.com/msmiljan/korektor/master/src/Korektor/SpellCheck_Lat.png "Latinica")![Ћирилица/Latinica](https://raw.githubusercontent.com/msmiljan/korektor/master/src/Korektor/SpellCheck_CirLat.png "Ћирилица/Latinica")
 
-Коректор је додатак за Microst Word који омогућава проверу словних грешака у српском тексту. 
+Коректор је додатак за Microsoft Word који омогућава проверу словних грешака у српском тексту. 
 
 # Преузимање (download)
 
