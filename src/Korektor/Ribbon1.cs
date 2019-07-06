@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Windows.Forms;
-using Word = Microsoft.Office.Interop.Word;
 using Microsoft.Office.Tools.Ribbon;
-using System.Diagnostics;
 
 namespace Korektor
 {
@@ -24,60 +21,76 @@ namespace Korektor
 
         private void Ribbon1_Close(object sender, EventArgs e)
         {
-            if (Globals.ThisAddIn.alphabet == ThisAddIn.ALPHABET_LAT)
-            {
-                Properties.Settings.Default.Alphabet = "Latin";
-            }
-            else 
+            if (Globals.ThisAddIn.alphabet == ThisAddIn.ALPHABET_CYR)
             {
                 Properties.Settings.Default.Alphabet = "Cyrillic";
             }
+            else 
+            {
+                Properties.Settings.Default.Alphabet = "Latin";
+            }
         }
 
-        private void correctErrors()
+        private void hyphenate()
         {
-            Globals.ThisAddIn.Application.Selection.Collapse();
-            initializeCorrectorForm();
-            Globals.ThisAddIn.frmCorrectWord.StartPosition = FormStartPosition.CenterScreen;
-            WordFinder wordFinder = new WordFinder();
-            if (wordFinder.next())
-            {
-                Globals.ThisAddIn.frmCorrectWord.setWordFinder(wordFinder);
-                Globals.ThisAddIn.frmCorrectWord.ShowDialog();
-            }
-            if (wordFinder.getCheckFullyCompleted())
-            {
-                wordFinder.handleCheckFullyCompleted();
-            }
-            Globals.ThisAddIn.Application.ActiveWindow.SetFocus();
-            Globals.ThisAddIn.Application.ActiveWindow.Activate();
+            Globals.ThisAddIn.hyphenator.hyphenate();
         }
 
-        private void initializeCorrectorForm()
+        private void unhyphenate()
         {
-            if (null == Globals.ThisAddIn.frmCorrectWord)
-            {
-                Globals.ThisAddIn.frmCorrectWord = new FormCorrectWord();
-            }
-            Globals.ThisAddIn.frmCorrectWord = new FormCorrectWord();
+            Globals.ThisAddIn.hyphenator.unhyphenate();
         }
 
-        private void ribbonButtonCyr_Click(object sender, RibbonControlEventArgs e)
+        private void splitButtonCyr_Click(object sender, RibbonControlEventArgs e)
         {
             Globals.ThisAddIn.alphabet = ThisAddIn.ALPHABET_CYR;
-            correctErrors();
+            Globals.ThisAddIn.correctErrors();
         }
 
-        private void ribbonButtonLat_Click(object sender, RibbonControlEventArgs e)
+        private void buttonCyrToLat_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.ThisAddIn.convertor.convert(ThisAddIn.ALPHABET_LAT);
+        }
+
+        private void buttonCyrPodeliReci_click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.ThisAddIn.alphabet = ThisAddIn.ALPHABET_CYR;
+            hyphenate();
+        }
+
+        private void buttonCyrSastaviReci_click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.ThisAddIn.alphabet = ThisAddIn.ALPHABET_CYR;
+            unhyphenate();
+        }
+
+        private void splitButtonLat_Click(object sender, RibbonControlEventArgs e)
         {
             Globals.ThisAddIn.alphabet = ThisAddIn.ALPHABET_LAT;
-            correctErrors();
+            Globals.ThisAddIn.correctErrors();
         }
 
-        private void ribbonButtonCyrLat_Click(object sender, RibbonControlEventArgs e)
+        private void buttonLatToCyr_Click(object sender, RibbonControlEventArgs e)
         {
-            Globals.ThisAddIn.alphabet = ThisAddIn.ALPHABET_CYRLAT;
-            correctErrors();
+            Globals.ThisAddIn.convertor.convert(ThisAddIn.ALPHABET_CYR);
+        }
+
+        private void buttonLatPodeliReci_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.ThisAddIn.alphabet = ThisAddIn.ALPHABET_LAT;
+            hyphenate();
+        }
+
+        private void buttonLatSastaviReci_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.ThisAddIn.alphabet = ThisAddIn.ALPHABET_LAT;
+            unhyphenate();
+        }
+
+        private void ribbonButtonLatToLat_Click(object sender, RibbonControlEventArgs e)
+        {
+            Globals.ThisAddIn.alphabet = ThisAddIn.ALPHABET_CUT_LAT;
+            Globals.ThisAddIn.convertor.convertCutLatToLat();
         }
 
     }

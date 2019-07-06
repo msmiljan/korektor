@@ -42,17 +42,18 @@
             // lstSuggestions
             // 
             this.lstSuggestions.FormattingEnabled = true;
-            this.lstSuggestions.Location = new System.Drawing.Point(10, 74);
+            this.lstSuggestions.ItemHeight = 15;
+            this.lstSuggestions.Location = new System.Drawing.Point(12, 85);
             this.lstSuggestions.Name = "lstSuggestions";
-            this.lstSuggestions.Size = new System.Drawing.Size(284, 69);
+            this.lstSuggestions.Size = new System.Drawing.Size(331, 79);
             this.lstSuggestions.TabIndex = 1;
             this.lstSuggestions.SelectedIndexChanged += new System.EventHandler(this.lstSuggestions_SelectedIndexChanged);
             // 
             // btnIgnore
             // 
-            this.btnIgnore.Location = new System.Drawing.Point(10, 41);
+            this.btnIgnore.Location = new System.Drawing.Point(12, 47);
             this.btnIgnore.Name = "btnIgnore";
-            this.btnIgnore.Size = new System.Drawing.Size(89, 23);
+            this.btnIgnore.Size = new System.Drawing.Size(104, 27);
             this.btnIgnore.TabIndex = 0;
             this.btnIgnore.Text = "Прескочи";
             this.toolTip1.SetToolTip(this.btnIgnore, "Ignorisi");
@@ -61,9 +62,9 @@
             // 
             // btnIgnoreAll
             // 
-            this.btnIgnoreAll.Location = new System.Drawing.Point(105, 41);
+            this.btnIgnoreAll.Location = new System.Drawing.Point(122, 47);
             this.btnIgnoreAll.Name = "btnIgnoreAll";
-            this.btnIgnoreAll.Size = new System.Drawing.Size(89, 23);
+            this.btnIgnoreAll.Size = new System.Drawing.Size(104, 27);
             this.btnIgnoreAll.TabIndex = 3;
             this.btnIgnoreAll.Text = "Прескочи све";
             this.btnIgnoreAll.UseVisualStyleBackColor = true;
@@ -71,9 +72,9 @@
             // 
             // btnAddToDictionary
             // 
-            this.btnAddToDictionary.Location = new System.Drawing.Point(200, 41);
+            this.btnAddToDictionary.Location = new System.Drawing.Point(233, 47);
             this.btnAddToDictionary.Name = "btnAddToDictionary";
-            this.btnAddToDictionary.Size = new System.Drawing.Size(94, 23);
+            this.btnAddToDictionary.Size = new System.Drawing.Size(110, 27);
             this.btnAddToDictionary.TabIndex = 2;
             this.btnAddToDictionary.Text = "Додај у речник";
             this.btnAddToDictionary.UseVisualStyleBackColor = true;
@@ -81,9 +82,9 @@
             // 
             // btnChange
             // 
-            this.btnChange.Location = new System.Drawing.Point(10, 152);
+            this.btnChange.Location = new System.Drawing.Point(12, 175);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(89, 23);
+            this.btnChange.Size = new System.Drawing.Size(104, 27);
             this.btnChange.TabIndex = 6;
             this.btnChange.Text = "Замени";
             this.btnChange.UseVisualStyleBackColor = true;
@@ -91,9 +92,9 @@
             // 
             // btnChangeAll
             // 
-            this.btnChangeAll.Location = new System.Drawing.Point(105, 152);
+            this.btnChangeAll.Location = new System.Drawing.Point(122, 175);
             this.btnChangeAll.Name = "btnChangeAll";
-            this.btnChangeAll.Size = new System.Drawing.Size(89, 23);
+            this.btnChangeAll.Size = new System.Drawing.Size(104, 27);
             this.btnChangeAll.TabIndex = 7;
             this.btnChangeAll.Text = "Замени све";
             this.btnChangeAll.UseVisualStyleBackColor = true;
@@ -101,17 +102,17 @@
             // 
             // tbxReplace
             // 
-            this.tbxReplace.Location = new System.Drawing.Point(10, 12);
+            this.tbxReplace.Location = new System.Drawing.Point(12, 14);
             this.tbxReplace.Name = "tbxReplace";
-            this.tbxReplace.Size = new System.Drawing.Size(284, 20);
+            this.tbxReplace.Size = new System.Drawing.Size(331, 21);
             this.tbxReplace.TabIndex = 8;
             this.tbxReplace.TextChanged += new System.EventHandler(this.tbxReplace_TextChanged);
             // 
             // FormCorrectWord
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(305, 183);
+            this.ClientSize = new System.Drawing.Size(356, 211);
             this.Controls.Add(this.tbxReplace);
             this.Controls.Add(this.btnChangeAll);
             this.Controls.Add(this.btnChange);
@@ -119,6 +120,7 @@
             this.Controls.Add(this.btnAddToDictionary);
             this.Controls.Add(this.lstSuggestions);
             this.Controls.Add(this.btnIgnore);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

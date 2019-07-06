@@ -1,7 +1,11 @@
 # Коректор
-![Ћирилица](https://raw.githubusercontent.com/msmiljan/korektor/master/src/Korektor/SpellCheck_Cir.png "Ћирилица")![Latinica](https://raw.githubusercontent.com/msmiljan/korektor/master/src/Korektor/SpellCheck_Lat.png "Latinica")![Ћирилица/Latinica](https://raw.githubusercontent.com/msmiljan/korektor/master/src/Korektor/SpellCheck_CirLat.png "Ћирилица/Latinica")
+![Ћирилица](https://raw.githubusercontent.com/msmiljan/korektor/master/src/Korektor/SpellCheck_Cir.png "Ћирилица")![Latinica](https://raw.githubusercontent.com/msmiljan/korektor/master/src/Korektor/SpellCheck_Lat.png "Latinica")
 
-Коректор је додатак за Microsoft Word који омогућава проверу словних грешака у српском тексту. 
+Коректор је додатак за Microsoft Word који омогућава:
+ - проверу словних грешака у српском тексту
+ - конверзију латиничног и ћириличног писма
+ - поделу речи на слогове и састављање слогова у речи
+ - конверзију ошишане латинице у латиницу
 
 # Преузимање (download)
 
@@ -15,9 +19,18 @@
 
 Када стартујете Microst Word, Коректор се налази у картици Редиговање (Review tab у енглеској верзији Word-а). 
 
-Доступне су три опције: Ћирилица, Latinica и Ћирилица/Latinica (мешовита употреба два писма). 
+Доступне су две иконице, Ћирилица и Latinica, зависно од писма у којем је текст. Клик на њих врши проверу речи.
 
-Коректор не прави разлику између екавског и ијекавског изговора у тексту, оба су правилна.
+Обе иконице имају четири исте опције:
+ - Провера речи
+ - Конверзија писма
+ - Растављање речи на слогове
+ - Састављање слогова у речи
+ 
+Латинично писмо има и додатну опцију: 
+ - Конверзија ошишане латинице у латиницу (Cccsszz → Cčćsšzž)
+
+Коректор не прави разлику између екавског и ијекавског изговора, оба су правилна.
 
 # Аутор
 

@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
-using System.Diagnostics;
 
 namespace Korektor
 {
@@ -82,7 +81,7 @@ namespace Korektor
 
         private void btnChangeAll_Click(object sender, EventArgs e)
         {
-            getWordFinder().findAndReplace(Globals.ThisAddIn.Application,
+            WordFinder.findAndReplace(Globals.ThisAddIn.Application.Selection,
                 Globals.ThisAddIn.Application.ActiveDocument.ActiveWindow.Selection.Text,
                 this.tbxReplace.Text);
             getWordFinder().initializeCorrectionRanges();
@@ -138,6 +137,14 @@ namespace Korektor
                 this.btnChange.Enabled = false;
                 this.btnChangeAll.Enabled = false;
             }
+            if (Globals.ThisAddIn.alphabet == ThisAddIn.ALPHABET_CUT_LAT)
+            {
+                this.btnAddToDictionary.Enabled = false;
+            }
+            else
+            {
+                this.btnAddToDictionary.Enabled = true;
+            }
         }
 
         private void addToDictionary(string str)
@@ -153,16 +160,7 @@ namespace Korektor
 
         private void setFormUIAlphabet()
         {
-            if (Globals.ThisAddIn.alphabet == ThisAddIn.ALPHABET_LAT)
-            {
-                this.Text = "Reč";
-                this.btnIgnore.Text = "Preskoči";
-                this.btnIgnoreAll.Text = "Preskoči sve";
-                this.btnChange.Text = "Zameni";
-                this.btnChangeAll.Text = "Zameni sve";
-                this.btnAddToDictionary.Text = "Dodaj u rečnik";
-            }
-            else 
+            if (Globals.ThisAddIn.alphabet == ThisAddIn.ALPHABET_CYR)
             {
                 this.Text = "Реч";
                 this.btnIgnore.Text = "Прескочи";
@@ -171,12 +169,21 @@ namespace Korektor
                 this.btnChangeAll.Text = "Замени све";
                 this.btnAddToDictionary.Text = "Додај у речник";
             }
+            else 
+            {
+                this.Text = "Reč";
+                this.btnIgnore.Text = "Preskoči";
+                this.btnIgnoreAll.Text = "Preskoči sve";
+                this.btnChange.Text = "Zameni";
+                this.btnChangeAll.Text = "Zameni sve";
+                this.btnAddToDictionary.Text = "Dodaj u rečnik";
+            }
         }
 
         // populates textbox and suggestions for incorrect word 
         private void populateWordFields()
         {
-            String word = getWordFinder().getCurrentWord();
+            string word = getWordFinder().getCurrentWord();
             this.tbxReplace.Text = word;
             List<string> suggestions = Globals.ThisAddIn.getHunspell().Suggest(word);
             this.lstSuggestions.Items.Clear();

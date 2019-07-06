@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
-using System.Diagnostics;
 
 namespace Korektor
 {
@@ -51,7 +50,7 @@ namespace Korektor
         {
             this.currentWord = null;
             checkIncorrectSpelling();
-            return !String.IsNullOrEmpty(this.getCurrentWord());
+            return !string.IsNullOrEmpty(this.getCurrentWord());
         }
 
         public string getCurrentWord()
@@ -112,11 +111,11 @@ namespace Korektor
                         this.lastWordLength = w.End - w.Start;
                         this.lastWordEndPos = w.End;
                         string str = w.Text.Trim();
-                        while (!String.IsNullOrEmpty(str) && !Char.IsLetter(str[str.Length - 1]))
+                        while (!string.IsNullOrEmpty(str) && !Char.IsLetter(str[str.Length - 1]))
                         {
                             str = str.TrimEnd(str[str.Length - 1]);
                         }
-                        if (!String.IsNullOrEmpty(str) &&
+                        if (!string.IsNullOrEmpty(str) &&
                             !Globals.ThisAddIn.ignoreAllWords.Contains(str) &&
                             !Globals.ThisAddIn.getHunspell().Spell(str))
                         {
@@ -148,7 +147,7 @@ namespace Korektor
             }
             catch (Exception ex)
             {
-                Debug.WriteLine(ex.Message);
+                MessageBox.Show(ex.StackTrace);
             }
             finally
             {
@@ -164,24 +163,28 @@ namespace Korektor
         {
             Globals.ThisAddIn.Application.Selection.Collapse(Word.WdCollapseDirection.wdCollapseEnd);
             string checkFullyCompletedMessage = null;
-            if (Globals.ThisAddIn.alphabet == ThisAddIn.ALPHABET_LAT)
+            if (Globals.ThisAddIn.alphabet == ThisAddIn.ALPHABET_CYR)
+            {
+                checkFullyCompletedMessage = "Провера завршена.";
+            }
+            else if (Globals.ThisAddIn.alphabet == ThisAddIn.ALPHABET_LAT)
             {
                 checkFullyCompletedMessage = "Provera završena.";
             }
-            else
+            else if (Globals.ThisAddIn.alphabet == ThisAddIn.ALPHABET_CUT_LAT)
             {
-                checkFullyCompletedMessage = "Провера завршена.";
+                checkFullyCompletedMessage = "Konverzija završena.";
             }
             MessageBox.Show("   " + checkFullyCompletedMessage);
         }
 
         /// handles change all event
-        public void findAndReplace(Microsoft.Office.Interop.Word.Application doc, object findText, object replaceWithText)
+        public static void findAndReplace(Microsoft.Office.Interop.Word.Selection selection, object findText, object replaceWithText)
         {
             // TODO include all editable stories
             //options
             object matchCase = true;
-            object matchWholeWord = false;
+            object matchWholeWord = true;
             object matchWildCards = false;
             object matchSoundsLike = false;
             object matchAllWordForms = false;
@@ -196,7 +199,7 @@ namespace Korektor
             object replace = 2;
             object wrap = 1;
             //execute find and replace
-            doc.Selection.Find.Execute(ref findText, ref matchCase, ref matchWholeWord,
+            selection.Find.Execute(ref findText, ref matchCase, ref matchWholeWord,
                 ref matchWildCards, ref matchSoundsLike, ref matchAllWordForms, ref forward, ref wrap, ref format, ref replaceWithText, ref replace,
                 ref matchKashida, ref matchDiacritics, ref matchAlefHamza, ref matchControl);
         }

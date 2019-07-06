@@ -63,9 +63,59 @@ namespace Korektor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SpellCheck {
+        internal static System.Drawing.Bitmap CirToLat {
             get {
-                object obj = ResourceManager.GetObject("SpellCheck", resourceCulture);
+                object obj = ResourceManager.GetObject("CirToLat", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] hyph_sr_dic {
+            get {
+                object obj = ResourceManager.GetObject("hyph_sr_dic", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] hyph_sr_Latn_dic {
+            get {
+                object obj = ResourceManager.GetObject("hyph_sr_Latn_dic", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Hyphenate {
+            get {
+                object obj = ResourceManager.GetObject("Hyphenate", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LatToCir {
+            get {
+                object obj = ResourceManager.GetObject("LatToCir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LatToLat {
+            get {
+                object obj = ResourceManager.GetObject("LatToLat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,19 +133,59 @@ namespace Korektor.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SpellCheck_CirLat {
+        internal static System.Drawing.Bitmap SpellCheck_Lat {
             get {
-                object obj = ResourceManager.GetObject("SpellCheck_CirLat", resourceCulture);
+                object obj = ResourceManager.GetObject("SpellCheck_Lat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] sr_aff {
+            get {
+                object obj = ResourceManager.GetObject("sr_aff", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] sr_dic {
+            get {
+                object obj = ResourceManager.GetObject("sr_dic", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] sr_Latn_aff {
+            get {
+                object obj = ResourceManager.GetObject("sr_Latn_aff", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] sr_Latn_dic {
+            get {
+                object obj = ResourceManager.GetObject("sr_Latn_dic", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap SpellCheck_Lat {
+        internal static System.Drawing.Bitmap UnHyphenate {
             get {
-                object obj = ResourceManager.GetObject("SpellCheck_Lat", resourceCulture);
+                object obj = ResourceManager.GetObject("UnHyphenate", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

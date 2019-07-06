@@ -5,6 +5,17 @@ VisualStudioVersion = 15.0.27130.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Korektor", "Korektor\Korektor.csproj", "{8551B674-374B-49A5-BA70-D522EB1FB875}"
 EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "KorektorInstaller", "KorektorInstaller\KorektorInstaller.wixproj", "{8E6543CE-B75E-4161-B1E2-1DEDB8F48735}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8551B674-374B-49A5-BA70-D522EB1FB875} = {8551B674-374B-49A5-BA70-D522EB1FB875}
+	EndProjectSection
+EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "KorektorSetup", "KorektorSetup\KorektorSetup.wixproj", "{0276A7DF-2817-4612-91AD-4D3E3D69613C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8551B674-374B-49A5-BA70-D522EB1FB875} = {8551B674-374B-49A5-BA70-D522EB1FB875}
+		{8E6543CE-B75E-4161-B1E2-1DEDB8F48735} = {8E6543CE-B75E-4161-B1E2-1DEDB8F48735}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +32,18 @@ Global
 		{8551B674-374B-49A5-BA70-D522EB1FB875}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8551B674-374B-49A5-BA70-D522EB1FB875}.Release|x86.ActiveCfg = Release|Any CPU
 		{8551B674-374B-49A5-BA70-D522EB1FB875}.Release|x86.Build.0 = Release|Any CPU
+		{8E6543CE-B75E-4161-B1E2-1DEDB8F48735}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{8E6543CE-B75E-4161-B1E2-1DEDB8F48735}.Debug|x86.ActiveCfg = Debug|x86
+		{8E6543CE-B75E-4161-B1E2-1DEDB8F48735}.Debug|x86.Build.0 = Debug|x86
+		{8E6543CE-B75E-4161-B1E2-1DEDB8F48735}.Release|Any CPU.ActiveCfg = Release|x86
+		{8E6543CE-B75E-4161-B1E2-1DEDB8F48735}.Release|x86.ActiveCfg = Release|x86
+		{8E6543CE-B75E-4161-B1E2-1DEDB8F48735}.Release|x86.Build.0 = Release|x86
+		{0276A7DF-2817-4612-91AD-4D3E3D69613C}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{0276A7DF-2817-4612-91AD-4D3E3D69613C}.Debug|x86.ActiveCfg = Debug|x86
+		{0276A7DF-2817-4612-91AD-4D3E3D69613C}.Debug|x86.Build.0 = Debug|x86
+		{0276A7DF-2817-4612-91AD-4D3E3D69613C}.Release|Any CPU.ActiveCfg = Release|x86
+		{0276A7DF-2817-4612-91AD-4D3E3D69613C}.Release|x86.ActiveCfg = Release|x86
+		{0276A7DF-2817-4612-91AD-4D3E3D69613C}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
