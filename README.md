@@ -40,7 +40,5 @@
 
 # Аутор
 
-Аутор речника и додатка је Милутин Смиљанић.
-E-mail: msmiljanic.gm@gmail.com
-
+Аутор речника и додатка је Милутин Смиљанић.<br>E-mail: msmiljanic.gm@gmail.com
 
