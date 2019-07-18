@@ -1,4 +1,4 @@
-\# Коректор
+# Коректор
 ![Ћирилица](https://raw.githubusercontent.com/msmiljan/korektor/master/src/Korektor/SpellCheck_Cir.png "Ћирилица")![Latinica](https://raw.githubusercontent.com/msmiljan/korektor/master/src/Korektor/SpellCheck_Lat.png "Latinica")
 
 Коректор је додатак за Microsoft Word који омогућава:
@@ -41,6 +41,6 @@
 # Аутор
 
 Аутор речника и додатка је Милутин Смиљанић.
-msmiljanic.gm@gmail.com
+E-mail: msmiljanic.gm@gmail.com
 
 
