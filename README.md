@@ -12,8 +12,7 @@
  
 # Преузимање (download)
 
-Кликните на линк: 
-https://github.com/msmiljan/korektor/raw/master/KorektorSetup.exe
+Кликните на линк:<br>https://github.com/msmiljan/korektor/raw/master/KorektorSetup.exe
 
 # Инсталација
 
