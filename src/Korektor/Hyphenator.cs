@@ -21,7 +21,10 @@ namespace Korektor
                     Globals.ThisAddIn.Application.ActiveWindow.Selection.WholeStory();
                     selection = Globals.ThisAddIn.Application.Selection;
                 }
-                else while (selection.Text.EndsWith("\r") || selection.Text.EndsWith("\n")) selection.End--;
+                else if (selection.Text != null)
+                {
+                    while (selection.Text.EndsWith("\r") || selection.Text.EndsWith("\n")) selection.End--;
+                }
 
                 XmlDocument xmlDocument = new XmlDocument();
                 xmlDocument.LoadXml(selection.Range.WordOpenXML);
@@ -40,28 +43,28 @@ namespace Korektor
                     ((UndoRecord)objUndo).StartCustomRecord(undoTitle);
                 }
 
-                try
+                if (selection.Text != null)
                 {
-                    foreach (XmlNode xmlNode in xmlDocument.SelectNodes("//w:t", xmlNamespaceManager))
+                    try
                     {
-                        string replacedEqualSign = xmlNode.InnerText.Replace("=", "\u0001");
-                        xmlNode.InnerText = hypenateText(replacedEqualSign);
+                        foreach (XmlNode xmlNode in xmlDocument.SelectNodes("//w:t", xmlNamespaceManager))
+                        {
+                            string replacedEqualSign = xmlNode.InnerText.Replace("=", "\u0001");
+                            xmlNode.InnerText = hypenateText(replacedEqualSign);
+                        }
+                        object value = Missing.Value;
+                        selection.InsertXML(xmlDocument.InnerXml, ref value);
                     }
-                    object value = Missing.Value;
-                    selection.InsertXML(xmlDocument.InnerXml, ref value);
+                    catch (Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show("   " + ex.Message);
+                    }
+                    Globals.ThisAddIn.Application.ActiveWindow.Selection.Select();
+                    selection = Globals.ThisAddIn.Application.Selection;
+
+                    searchAndReplaceAll("=", "\u001f");
+                    searchAndReplaceAll("\u0001", "=");
                 }
-                catch (Exception ex)
-                {
-                    System.Windows.Forms.MessageBox.Show("   " + ex.Message);
-
-                }
-
-                Globals.ThisAddIn.Application.ActiveWindow.Selection.Select();
-                selection = Globals.ThisAddIn.Application.Selection;
-
-                searchAndReplaceAll("=", "\u001f");
-                searchAndReplaceAll("\u0001", "=");
-
 
                 selection.End = selection.Start;
                 Globals.ThisAddIn.Application.ScreenUpdating = true;

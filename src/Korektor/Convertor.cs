@@ -204,7 +204,10 @@ namespace Korektor
                     Globals.ThisAddIn.Application.ActiveWindow.Selection.WholeStory();
                     selection = Globals.ThisAddIn.Application.Selection;
                 }
-                else while (selection.Text.EndsWith("\r") || selection.Text.EndsWith("\n")) selection.End--;
+                else if (selection.Text != null)
+                {
+                    while (selection.Text.EndsWith("\r") || selection.Text.EndsWith("\n")) selection.End--;
+                }
 
                 //Hyphenator.searchAndReplaceAll("\u001f", "");
 
@@ -224,12 +227,21 @@ namespace Korektor
                     ((UndoRecord)objUndo).StartCustomRecord(undoTitle);
                 }
 
-                foreach (XmlNode xmlNode in xmlDocument.SelectNodes("//w:t", xmlNamespaceManager))
+                if (selection.Text != null)
                 {
-                    xmlNode.InnerText = convertText(xmlNode.InnerText, alphabet);
+                    try
+                    {
+                        foreach (XmlNode xmlNode in xmlDocument.SelectNodes("//w:t", xmlNamespaceManager))
+                        {
+                            xmlNode.InnerText = convertText(xmlNode.InnerText, alphabet);
+                        }
+                        selection.InsertXML(xmlDocument.InnerXml, Missing.Value);
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show("   " + ex.Message);
+                    }
                 }
-                selection.InsertXML(xmlDocument.InnerXml, Missing.Value);
-
                 if (Globals.ThisAddIn.getOfficeVersion() > 12)
                 {
                     ((UndoRecord)objUndo).EndCustomRecord();
@@ -315,7 +327,10 @@ namespace Korektor
                     Globals.ThisAddIn.Application.ActiveWindow.Selection.WholeStory();
                     selection = Globals.ThisAddIn.Application.Selection;
                 }
-                else while (selection.Text.EndsWith("\r") || selection.Text.EndsWith("\n")) selection.End--;
+                else if (selection.Text != null)
+                {
+                    while (selection.Text.EndsWith("\r") || selection.Text.EndsWith("\n")) selection.End--;
+                }
 
                 Hyphenator.searchAndReplaceAll("\u001f", "");
 
@@ -331,11 +346,21 @@ namespace Korektor
                     ((UndoRecord)objUndo).StartCustomRecord("Konverzija pisma");
                 }
 
-                foreach (XmlNode xmlNode in xmlDocument.SelectNodes("//w:t", xmlNamespaceManager))
+                if (selection.Text != null)
                 {
-                    xmlNode.InnerText = convertCutLatText(xmlNode.InnerText);
+                    try
+                    {
+                        foreach (XmlNode xmlNode in xmlDocument.SelectNodes("//w:t", xmlNamespaceManager))
+                        {
+                            xmlNode.InnerText = convertCutLatText(xmlNode.InnerText);
+                        }
+                        selection.InsertXML(xmlDocument.InnerXml, Missing.Value);
+                    }
+                    catch (Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show("   " + ex.Message);
+                    }
                 }
-                selection.InsertXML(xmlDocument.InnerXml, Missing.Value);
 
                 if (Globals.ThisAddIn.getOfficeVersion() > 12)
                 {

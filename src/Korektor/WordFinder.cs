@@ -122,6 +122,8 @@ namespace Korektor
                             setCurrentWord(str);
                             w.SetRange(w.Start, w.Start + str.Length);
                             w.Select();
+                            Word.Window window = Globals.ThisAddIn.Application.ActiveDocument.ActiveWindow;
+                            window.ScrollIntoView(window.Selection.Next(Word.WdUnits.wdLine, 1), true);
                             wordFound = true;
                             break;
                         }

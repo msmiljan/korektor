@@ -56,7 +56,6 @@
             this.btnIgnore.Size = new System.Drawing.Size(104, 27);
             this.btnIgnore.TabIndex = 0;
             this.btnIgnore.Text = "Прескочи";
-            this.toolTip1.SetToolTip(this.btnIgnore, "Ignorisi");
             this.btnIgnore.UseVisualStyleBackColor = true;
             this.btnIgnore.Click += new System.EventHandler(this.btnIgnore_Click);
             // 
