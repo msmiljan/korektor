@@ -45,6 +45,8 @@ namespace Korektor
 
         public string dictionariesPath = null;
 
+        public System.Drawing.Point frmCorrectWordLocation = new System.Drawing.Point(0, 0);
+
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             setOfficeVersion();

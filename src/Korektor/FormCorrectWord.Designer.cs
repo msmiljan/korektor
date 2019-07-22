@@ -124,6 +124,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormCorrectWord";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Исправи Реч";
             this.Activated += new System.EventHandler(this.FormCorrectWord_Activated);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormCorrectWord_FormClosed);

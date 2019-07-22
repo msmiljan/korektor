@@ -95,10 +95,19 @@ namespace Korektor
         {
             this.setFormUIAlphabet();
             populateWordFields();
+            if (Globals.ThisAddIn.frmCorrectWordLocation.X == 0 && Globals.ThisAddIn.frmCorrectWordLocation.Y == 0)
+            {
+                this.StartPosition = FormStartPosition.CenterScreen;
+            }
+            else
+            {
+                this.Location = Globals.ThisAddIn.frmCorrectWordLocation;
+            }
         }
 
         private void FormCorrectWord_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Globals.ThisAddIn.frmCorrectWordLocation = this.Location;
             Globals.ThisAddIn.Application.Selection.Collapse(Word.WdCollapseDirection.wdCollapseEnd);
         }
 
