@@ -123,7 +123,9 @@ namespace Korektor
                             w.SetRange(w.Start, w.Start + str.Length);
                             w.Select();
                             Word.Window window = Globals.ThisAddIn.Application.ActiveDocument.ActiveWindow;
-                            window.ScrollIntoView(window.Selection.Next(Word.WdUnits.wdLine, 1), true);
+                            Word.Range range = window.Selection.Range;
+                            range.MoveEnd(Word.WdUnits.wdSentence, 1);
+                            window.ScrollIntoView(range, true);
                             wordFound = true;
                             break;
                         }
