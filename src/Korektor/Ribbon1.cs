@@ -33,11 +33,13 @@ namespace Korektor
 
         private void hyphenate()
         {
+            if (Globals.ThisAddIn.Application.Documents.Count == 0) return;
             Globals.ThisAddIn.hyphenator.hyphenate();
         }
 
         private void unhyphenate()
         {
+            if (Globals.ThisAddIn.Application.Documents.Count == 0) return;
             Globals.ThisAddIn.hyphenator.unhyphenate();
         }
 

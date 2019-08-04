@@ -49,8 +49,8 @@ namespace Korektor
                     {
                         foreach (XmlNode xmlNode in xmlDocument.SelectNodes("//w:t", xmlNamespaceManager))
                         {
-                            string replacedEqualSign = xmlNode.InnerText.Replace("=", "\u0001");
-                            xmlNode.InnerText = hypenateText(replacedEqualSign);
+                            string replacedEqualSign = xmlNode.InnerText.Replace("=", "\uE000");
+                            xmlNode.InnerText = hyphenateText(replacedEqualSign);
                         }
                         object value = Missing.Value;
                         selection.InsertXML(xmlDocument.InnerXml, ref value);
@@ -63,7 +63,7 @@ namespace Korektor
                     selection = Globals.ThisAddIn.Application.Selection;
 
                     searchAndReplaceAll("=", "\u001f");
-                    searchAndReplaceAll("\u0001", "=");
+                    searchAndReplaceAll("\uE000", "=");
                 }
 
                 selection.End = selection.Start;
@@ -94,7 +94,7 @@ namespace Korektor
             }
         }
 
-        public string hypenateText(string text)
+        public string hyphenateText(string text)
         {
             string pattern = @"(?i)([абвгдђежзијклљмнњопрстћуфхцчџш]+)";
             if (Globals.ThisAddIn.alphabet != ThisAddIn.ALPHABET_CYR)

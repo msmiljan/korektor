@@ -91,9 +91,11 @@ namespace Korektor
             mapLatToCyr.Add("k", "к");
             mapLatToCyr.Add("l", "л");
             mapLatToCyr.Add("lj", "љ");
+            mapLatToCyr.Add("lJ", "љ");
             mapLatToCyr.Add("m", "м");
             mapLatToCyr.Add("n", "н");
             mapLatToCyr.Add("nj", "њ");
+            mapLatToCyr.Add("nJ", "њ");
             mapLatToCyr.Add("o", "о");
             mapLatToCyr.Add("p", "п");
             mapLatToCyr.Add("r", "р");
@@ -106,6 +108,7 @@ namespace Korektor
             mapLatToCyr.Add("c", "ц");
             mapLatToCyr.Add("č", "ч");
             mapLatToCyr.Add("dž", "џ");
+            mapLatToCyr.Add("dŽ", "џ");
             mapLatToCyr.Add("š", "ш");
 
             mapLatToCyr.Add("A", "А");
@@ -122,9 +125,11 @@ namespace Korektor
             mapLatToCyr.Add("K", "К");
             mapLatToCyr.Add("L", "Л");
             mapLatToCyr.Add("Lj", "Љ");
+            mapLatToCyr.Add("LJ", "Љ");
             mapLatToCyr.Add("M", "М");
             mapLatToCyr.Add("N", "Н");
             mapLatToCyr.Add("Nj", "Њ");
+            mapLatToCyr.Add("NJ", "Њ");
             mapLatToCyr.Add("O", "О");
             mapLatToCyr.Add("P", "П");
             mapLatToCyr.Add("R", "Р");
@@ -137,6 +142,7 @@ namespace Korektor
             mapLatToCyr.Add("C", "Ц");
             mapLatToCyr.Add("Č", "Ч");
             mapLatToCyr.Add("Dž", "Џ");
+            mapLatToCyr.Add("DŽ", "Џ");
             mapLatToCyr.Add("Š", "Ш");
         }
 
@@ -194,6 +200,7 @@ namespace Korektor
 
         public void convert(int alphabet)
         {
+            if (Globals.ThisAddIn.Application.Documents.Count == 0) return;
             try
             {
                 Globals.ThisAddIn.Application.ScreenUpdating = false;
@@ -317,6 +324,7 @@ namespace Korektor
 
         public void convertCutLatToLat()
         {
+            if (Globals.ThisAddIn.Application.Documents.Count == 0) return;
             try
             {
                 Globals.ThisAddIn.Application.ScreenUpdating = false;

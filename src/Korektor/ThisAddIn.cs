@@ -171,6 +171,7 @@ namespace Korektor
 
         public void correctErrors()
         {
+            if (Globals.ThisAddIn.Application.Documents.Count == 0) return;
             Globals.ThisAddIn.Application.Selection.Collapse();
             initializeCorrectorForm();
             Globals.ThisAddIn.frmCorrectWord.StartPosition = FormStartPosition.CenterScreen;
