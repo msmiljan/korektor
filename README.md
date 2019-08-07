@@ -14,6 +14,8 @@
 
 Кликните на линк:<br>https://github.com/msmiljan/korektor/raw/master/KorektorSetup.exe
 
+Уколико користите LibreOffice или OpenOffice речник је доступан као екстензија:<br>https://github.com/msmiljan/korektor/raw/master/dict-sr.oxt
+
 # Инсталација
 
 Стартујте програм KorektorSetup.exe, прихватите бесплатну лиценцу и сачекајте да се програм инсталира. 
