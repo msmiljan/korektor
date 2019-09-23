@@ -16,6 +16,8 @@
 
 Уколико користите LibreOffice или OpenOffice речник је доступан као екстензија:<br>https://extensions.libreoffice.org/extensions/serbian-spellcheck-and-hyphenation
 
+Речник може да се дода у све програме који подржавају Hunspell формат:<br>https://en.wikipedia.org/wiki/Hunspell
+
 # Инсталација
 
 Стартујте програм KorektorSetup.exe, прихватите бесплатну лиценцу и сачекајте да се програм инсталира. 
