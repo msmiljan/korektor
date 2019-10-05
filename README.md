@@ -14,7 +14,7 @@
 
 Кликните на линк:<br>https://github.com/msmiljan/korektor/raw/master/KorektorSetup.exe
 
-Уколико користите LibreOffice или OpenOffice речник је доступан као екстензија:<br>https://extensions.libreoffice.org/extensions/serbian-spellcheck-and-hyphenation
+Уколико користите LibreOffice или OpenOffice, речник и упутство за инсталацију и коришћење су доступни као екстензија:<br>https://extensions.libreoffice.org/extensions/serbian-spellcheck-and-hyphenation
 
 Речник може да се дода у све програме који подржавају Hunspell формат:<br>https://en.wikipedia.org/wiki/Hunspell
 
