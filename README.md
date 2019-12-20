@@ -16,7 +16,7 @@
 
 Уколико користите LibreOffice или OpenOffice, речник, као и упутство за инсталацију и коришћење, су доступни као екстензија:<br>https://extensions.libreoffice.org/extensions/serbian-spellcheck-and-hyphenation
 
-Firefox и Thunderbird речници су доступни као екстензије:<br>https://github.com/msmiljan/korektor/blob/master/sr-Cyrl%40dictionaries.addons.mozilla.org.xpi<br>https://github.com/msmiljan/korektor/blob/master/sr-Latn%40dictionaries.addons.mozilla.org.xpi
+Firefox и Thunderbird речници су доступни као екстензије:<br>https://github.com/msmiljan/korektor/raw/master/sr-Cyrl%40dictionaries.addons.mozilla.org.xpi<br>https://github.com/msmiljan/korektor/raw/master/sr-Latn%40dictionaries.addons.mozilla.org.xpi
 
 Речник може да се дода у све програме који подржавају Hunspell формат:<br>https://en.wikipedia.org/wiki/Hunspell
 
