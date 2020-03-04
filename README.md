@@ -14,13 +14,15 @@
 
 Кликните на линк:<br>https://github.com/msmiljan/korektor/raw/master/KorektorSetup.exe
 
-Уколико користите LibreOffice или OpenOffice, речник, као и упутство за инсталацију и коришћење, су доступни као екстензија:<br>https://extensions.libreoffice.org/extensions/serbian-spellcheck-and-hyphenation
+Речник уграђен у Коректор је званично уграђен и у LibreOffice, а доступан је и као екстензија која може да се дода и у OpenOffice:<br>https://extensions.libreoffice.org/extensions/serbian-spellcheck-and-hyphenation
 
-Firefox и Thunderbird речници су доступни као екстензије:<br>https://github.com/msmiljan/korektor/raw/master/sr-Cyrl%40dictionaries.addons.mozilla.org.xpi<br>https://github.com/msmiljan/korektor/raw/master/sr-Latn%40dictionaries.addons.mozilla.org.xpi
+Речник је званично уграђен и у Google Chrome и Microsoft Edge, као и у остале веб претраживаче засноване на пројекту Chromium.
 
-Речник може да се дода у све програме који подржавају Hunspell формат:<br>https://en.wikipedia.org/wiki/Hunspell
+Речник је доступан и као екстензија за Firefox и Thunderbird:<br>https://github.com/msmiljan/korektor/raw/master/sr-Cyrl%40dictionaries.addons.mozilla.org.xpi<br>https://github.com/msmiljan/korektor/raw/master/sr-Latn%40dictionaries.addons.mozilla.org.xpi
 
-# Инсталација
+Речник може да се дода и у све друге програме који подржавају Hunspell формат:<br>https://en.wikipedia.org/wiki/Hunspell
+
+# Инсталација додатка за Microsoft Word
 
 Стартујте програм KorektorSetup.exe, прихватите бесплатну лиценцу и сачекајте да се програм инсталира. 
 
